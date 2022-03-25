@@ -1,0 +1,28 @@
+{
+  "name": "akashcars",
+  "version": "1.0.0",
+  "main": "server.js",
+  "engines": {
+    "node": "16.13.0",
+    "npm": "8.1.0"
+  },
+  "scripts": {
+    "build": "cd client && run build",
+    "install-client":"cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "node server.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently -n 'server,client' -c 'red,green' \"nodemon server.js\" \"npm run client\"" 
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.11",
+    "nodemon": "^2.0.14",
+    "stripe": "^8.184.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {}
+}
